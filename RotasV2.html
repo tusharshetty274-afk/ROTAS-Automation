@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROTAS Automation | Automate Your Business. Multiply Your Output.</title>
+    <meta name="description" content="ROTAS Automation saves SMEs 80+ hours weekly through intelligent AI automation. No tech team needed. Measurable ROI in 30 days.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0f1a'/%3E%3Cpath d='M16 6L8 10.5v11L16 26l8-4.5v-11z' fill='none' stroke='%2300d4aa' stroke-width='1.5'/%3E%3Cpath d='M16 6v20M8 10.5L24 21.5M24 10.5L8 21.5' stroke='%2300d4aa' stroke-width='1' opacity='.4'/%3E%3C/svg%3E">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#fafbfc;
+            --bg-white:#ffffff;
+            --bg-dark:#0c0f1a;
+            --bg-dark-2:#12162a;
+            --bg-dark-3:#181d36;
+            --bg-surface:#f3f4f6;
+            --text:#0c0f1a;
+            --text-secondary:#4b5563;
+            --text-muted:#9ca3af;
+            --text-inverse:#ffffff;
+            --text-inverse-muted:rgba(255,255,255,.55);
+            --border:#e5e7eb;
+            --border-light:#f0f1f3;
+            --emerald:#00d4aa;
+            --emerald-dark:#00b894;
+            --emerald-bg:rgba(0,212,170,.08);
+            --emerald-bg-strong:rgba(0,212,170,.14);
+            --blue:#3b82f6;
+            --amber:#f59e0b;
+            --red:#ef4444;
+            --red-bg:rgba(239,68,68,.08);
+            --sans:'Inter',system-ui,-apple-system,sans-serif;
+            --serif:'DM Serif Display',Georgia,serif;
+            --shadow-xs:0 1px 2px rgba(0,0,0,.04);
+            --shadow-sm:0 2px 8px rgba(0,0,0,.05);
+            --shadow-md:0 4px 16px rgba(0,0,0,.06);
+            --shadow-lg:0 8px 30px rgba(0,0,0,.08);
+            --shadow-xl:0 16px 50px rgba(0,0,0,.1);
+            --radius:14px;
+            --radius-sm:10px;
+            --radius-xs:8px;
+            --radius-full:999px;
+            --ease:cubic-bezier(.4,0,.2,1);
+            --max-w:1180px;
+        }
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.65;overflow-x:hidden}
+        img{max-width:100%;display:block}
+        a{color:inherit;text-decoration:none}
+        button{cursor:pointer;font-family:inherit;border:none;background:none}
+        ul{list-style:none}
+        .container{max-width:var(--max-w);margin:0 auto;padding:0 28px}
+        .section{padding:110px 0}
+        @media(max-width:768px){.section{padding:72px 0}}
+
+        /* --- Typography --- */
+        .label{font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--emerald);display:inline-flex;align-items:center;gap:8px}
+        .label::before{content:'';width:20px;height:1.5px;background:var(--emerald);border-radius:2px}
+        .title{font-size:clamp(34px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-top:14px}
+        .title em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--emerald-dark)}
+        .subtitle{font-size:17px;color:var(--text-secondary);max-width:540px;line-height:1.75;margin-top:18px}
+        .subtitle strong{color:var(--text);font-weight:700}
+
+        /* --- Buttons --- */
+        .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:13px 26px;border-radius:var(--radius-full);transition:all .3s var(--ease);white-space:nowrap;letter-spacing:-.01em}
+        .btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+        .btn:hover svg{transform:translateX(3px)}
+        .btn-dark{background:var(--bg-dark);color:var(--text-inverse)}
+        .btn-dark:hover{background:var(--bg-dark-2);box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+        .btn-emerald{background:var(--emerald);color:var(--bg-dark)}
+        .btn-emerald:hover{background:var(--emerald-dark);box-shadow:0 4px 20px rgba(0,212,170,.3);transform:translateY(-1px)}
+        .btn-white{background:var(--bg-white);color:var(--text)}
+        .btn-white:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+        .btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--text)}
+        .btn-ghost:hover{border-color:var(--emerald);color:var(--emerald-dark)}
+        .btn-lg{padding:16px 32px;font-size:15.5px}
+        .arrow-icon{width:16px;height:16px}
+
+        /* --- Badge --- */
+        .badge{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;padding:5px 14px;border-radius:var(--radius-full)}
+        .badge-surface{background:var(--bg-surface);color:var(--text-secondary);border:1px solid var(--border)}
+        .badge-emerald{background:var(--emerald-bg);color:var(--emerald-dark);border:1px solid rgba(0,212,170,.2)}
+        .badge-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+        /* ===== NAVIGATION ===== */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .35s var(--ease)}
+        .nav-glass{background:rgba(250,251,252,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04)}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--max-w);margin:0 auto;padding:0 28px}
+        .logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;letter-spacing:-.03em}
+        .logo-mark{width:34px;height:34px;background:var(--bg-dark);border-radius:9px;display:grid;place-items:center}
+        .logo-mark svg{width:18px;height:18px}
+        .nav-links{display:flex;align-items:center;gap:28px}
+        .nav-links a{font-size:13.5px;font-weight:500;color:var(--text-secondary);transition:color .2s}
+        .nav-links a:hover{color:var(--text)}
+        .nav-right{display:flex;align-items:center;gap:14px}
+        .nav-demo{font-size:13.5px;font-weight:500;color:var(--text-secondary);transition:color .2s}
+        .nav-demo:hover{color:var(--text)}
+        .nav-cta{font-size:13.5px;font-weight:600;padding:9px 20px;border-radius:var(--radius-full);background:var(--emerald);color:var(--bg-dark);transition:all .25s var(--ease);display:inline-flex;align-items:center;gap:6px}
+        .nav-cta:hover{background:var(--emerald-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,170,.25)}
+        .nav-cta svg{width:14px;height:14px}
+        .hamburger{display:none;flex-direction:column;gap:5px;padding:6px}
+        .hamburger span{display:block;width:20px;height:1.8px;background:var(--text);border-radius:2px;transition:all .25s var(--ease)}
+        @media(max-width:860px){
+            .nav-links{display:none}
+            .nav-demo{display:none}
+            .hamburger{display:flex}
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-overlay{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
+        .mobile-overlay.open{opacity:1;pointer-events:auto}
+        .mobile-drawer{position:fixed;top:0;right:0;bottom:0;z-index:100;width:min(320px,85vw);background:var(--bg-white);box-shadow:-4px 0 30px rgba(0,0,0,.1);transform:translateX(100%);transition:transform .35s var(--ease);padding:80px 28px 28px;display:flex;flex-direction:column;gap:4px}
+        .mobile-drawer.open{transform:translateX(0)}
+        .mobile-drawer a{font-size:16px;font-weight:500;padding:14px 0;border-bottom:1px solid var(--border-light);color:var(--text)}
+        .mobile-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:var(--bg-surface);display:grid;place-items:center}
+        .mobile-close svg{width:18px;height:18px;color:var(--text)}
+
+        /* ===== MARQUEE BANNER ===== */
+        .marquee-wrap{overflow:hidden;background:var(--emerald);padding:10px 0;position:relative;z-index:2}
+        .marquee-track{display:flex;width:max-content;animation:marquee 20s linear infinite}
+        .marquee-track:hover{animation-play-state:paused}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        .marquee-item{display:inline-flex;align-items:center;gap:24px;padding:0 24px;white-space:nowrap;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:var(--bg-dark);text-transform:uppercase}
+        .marquee-item .sep{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.2);flex-shrink:0}
+
+        /* ===== HERO ===== */
+        .hero{padding:130px 0 70px;position:relative;overflow:hidden;background:var(--bg-dark)}
+        .hero::before{content:'';position:absolute;top:-40%;right:-20%;width:80%;height:120%;background:radial-gradient(ellipse,rgba(0,212,170,.06) 0%,transparent 65%);pointer-events:none}
+        .hero::after{content:'';position:absolute;bottom:-50%;left:-10%;width:60%;height:100%;background:radial-gradient(ellipse,rgba(59,130,246,.04) 0%,transparent 60%);pointer-events:none}
+        .hero-grid{display:none}
+        .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+        .hero:hover .hero-canvas{pointer-events:auto}
+        .hero .container{position:relative;z-index:1}
+        .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+        .hero .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55);font-size:12px}
+        .hero .badge .badge-dot{background:var(--emerald)}
+        .hero-content{max-width:660px}
+        .hero h1{font-size:clamp(38px,6.2vw,68px);font-weight:800;line-height:1.06;color:var(--text-inverse);letter-spacing:-.03em;margin-bottom:22px}
+        .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--emerald),#00f0c0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:17.5px;color:var(--text-inverse-muted);line-height:1.7;margin-bottom:30px;max-width:520px}
+        .hero-sub strong{color:rgba(255,255,255,.9);font-weight:600}
+        .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:52px}
+        .hero-pill{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;padding:9px 18px;border-radius:var(--radius-full);background:rgba(0,212,170,.08);border:1px solid rgba(0,212,170,.15);color:var(--emerald)}
+        .hero-pill svg{width:14px;height:14px;flex-shrink:0}
+
+        /* Hero Stats Bar */
+        .stats-bar{background:var(--bg-white);border-radius:var(--radius);display:flex;box-shadow:var(--shadow-xl);overflow:hidden;margin-top:12px}
+        .stat-item{flex:1;padding:22px 24px;position:relative;min-width:0;white-space:nowrap}
+        .stat-item+.stat-item::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:var(--border)}
+        .stat-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;white-space:nowrap}
+        .stat-value{font-size:15px;font-weight:700;color:var(--emerald-dark);white-space:nowrap}
+        .stat-cta-wrap{flex-shrink:0;padding:14px 20px;display:grid;place-items:center;background:var(--bg-surface)}
+        .stat-cta-wrap .btn{font-size:14px}
+        @media(max-width:860px){
+            .stats-bar{flex-direction:column}
+            .stat-item+.stat-item::before{top:0;left:10%;width:80%;height:1px}
+            .stat-item{display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar{padding:44px 0;border-bottom:1px solid var(--border-light);text-align:center}
+        .trust-headline{font-size:18px;font-weight:700;color:var(--text)}
+        .trust-headline span{color:var(--emerald-dark);font-weight:800}
+        .trust-sub{font-size:14.5px;color:var(--text-secondary);margin-top:4px;margin-bottom:22px;font-weight:500}
+        .trust-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+        .trust-tag{font-size:15px;font-weight:600;padding:9px 20px;border-radius:var(--radius-full);background:var(--bg-white);border:1px solid var(--border);color:var(--text);display:inline-flex;align-items:center;gap:6px;transition:all .25s var(--ease)}
+        .trust-tag:hover{border-color:var(--emerald);color:var(--emerald-dark);background:var(--emerald-bg)}
+        @media(max-width:768px){
+            .trust-bar{padding:32px 0}
+            .trust-headline{font-size:16px}
+            .trust-sub{font-size:13px;margin-bottom:18px}
+            .trust-tags{justify-content:flex-start;gap:8px}
+            .trust-tag{font-size:13px;padding:7px 14px}
+        }
+
+        /* ===== PROBLEM SECTION ===== */
+        .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+        .p-card{background:var(--bg-white);border-radius:var(--radius);border:1px solid var(--border-light);overflow:hidden;transition:all .35s var(--ease)}
+        .p-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--emerald)}
+        .p-card-visual{height:180px;background:var(--bg-surface);position:relative;overflow:hidden}
+        .p-card-visual img{width:100%;height:100%;object-fit:cover}
+        .p-card-body{padding:22px 24px 26px}
+        .p-card-body h3{font-size:16px;font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:7px}
+        .p-card-body h3 .warn-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0}
+        .p-card-body p{font-size:13.5px;color:var(--text-secondary);line-height:1.65}
+        @media(max-width:768px){.problem-grid{grid-template-columns:1fr}}
+
+        /* ===== PROCESS ===== */
+        .process-section{background:var(--bg-white)}
+        .process-track{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:52px;position:relative}
+        .step{position:relative;z-index:1;padding:28px 22px 24px;background:var(--bg-surface);border-radius:var(--radius);border:1px solid var(--border-light);transition:all .35s var(--ease);text-align:left}
+        .step:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--emerald);background:var(--bg-white)}
+        .step-num{width:44px;height:44px;border-radius:12px;background:var(--bg-dark);color:var(--emerald);font-size:15px;font-weight:700;display:grid;place-items:center;margin-bottom:18px}
+        .step h3{font-size:15.5px;font-weight:700;margin-bottom:8px}
+        .step p{font-size:12.5px;color:var(--text-secondary);line-height:1.65}
+        .step-tag{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;color:var(--emerald-dark);background:var(--emerald-bg);padding:4px 12px;border-radius:var(--radius-full)}
+        .step-connector{display:none}
+        @media(min-width:1025px){.step-connector{display:block;position:absolute;top:48px;right:-14px;width:12px;height:12px;color:var(--emerald);z-index:2}.step:last-child .step-connector{display:none}}
+        @media(max-width:1024px){.process-track{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:600px){
+            .process-track{grid-template-columns:1fr;gap:12px}
+            .step{display:grid;grid-template-columns:44px 1fr;grid-template-rows:auto auto auto;gap:0 16px;padding:20px;align-items:start}
+            .step-num{grid-row:1/4;margin-bottom:0;align-self:start;margin-top:2px}
+            .step h3{grid-column:2;margin-bottom:4px}
+            .step p{grid-column:2;margin-bottom:6px}
+            .step-tag{grid-column:2}
+            .step:hover{transform:none}
+        }
+
+        /* ===== INDUSTRIES ===== */
+        .ind-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:28px 0 36px}
+        .ind-tab{padding:9px 18px;border-radius:var(--radius-full);font-size:13px;font-weight:500;border:1px solid var(--border);color:var(--text-secondary);transition:all .25s var(--ease);display:inline-flex;align-items:center;gap:5px}
+        .ind-tab:hover{border-color:var(--emerald);color:var(--emerald-dark)}
+        .ind-tab.active{background:var(--bg-dark);color:var(--text-inverse);border-color:var(--bg-dark)}
+        .ind-panel{display:none;animation:fadeSlide .4s var(--ease)}
+        .ind-panel.active{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+        @keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+        .ind-meta{font-size:11.5px;color:var(--text-muted);margin-bottom:10px}
+        .ind-panel h3{font-size:21px;font-weight:700;line-height:1.35;margin-bottom:14px}
+        .ind-badge{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:500;color:var(--emerald-dark);background:var(--emerald-bg);padding:5px 14px;border-radius:var(--radius-full);margin-bottom:24px}
+        .ind-features{display:flex;flex-direction:column}
+        .ind-feat{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border-light)}
+        .ind-feat:last-child{border-bottom:none}
+        .ind-feat-name{font-size:14.5px;font-weight:500;display:flex;align-items:center;gap:10px}
+        .ind-feat-name svg{width:18px;height:18px;color:var(--text-muted)}
+        .ind-feat-result{font-size:12.5px;font-weight:600;color:var(--emerald-dark)}
+        .snapshot{background:var(--bg-dark);border-radius:var(--radius);padding:30px;color:var(--text-inverse)}
+        .snapshot-label{font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:22px}
+        .snap-row{margin-bottom:18px}
+        .snap-val{font-size:26px;font-weight:700;color:var(--emerald);line-height:1.15}
+        .snap-desc{font-size:12px;color:var(--text-inverse-muted)}
+        .snap-cta-text{font-size:12.5px;font-weight:600;color:var(--emerald);margin-top:14px;margin-bottom:4px;line-height:1.4}
+        .snapshot .btn{width:100%;justify-content:center;margin-top:8px}
+        @media(max-width:860px){.ind-panel.active{grid-template-columns:1fr}.snapshot{margin-top:16px}}
+
+        /* ===== TESTIMONIALS ===== */
+        .testi-section{background:var(--bg-surface)}
+        .testi-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px}
+        .testi-counters{display:flex;gap:12px}
+        .testi-counter{text-align:center;padding:12px 22px;background:var(--bg-white);border-radius:var(--radius-xs);border:1px solid var(--border-light)}
+        .testi-counter strong{display:block;font-size:22px;font-weight:800;color:var(--text)}
+        .testi-counter span{font-size:11px;color:var(--text-muted)}
+        .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .t-card{background:var(--bg-white);border-radius:var(--radius);padding:26px;border:1px solid var(--border-light);transition:all .35s var(--ease);display:flex;flex-direction:column}
+        .t-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--emerald)}
+        .t-stars{display:flex;gap:1px;margin-bottom:10px}
+        .t-stars svg{width:15px;height:15px;fill:var(--amber);color:var(--amber)}
+        .t-tag{display:inline-block;font-size:11.5px;font-weight:600;color:var(--emerald-dark);background:var(--emerald-bg);padding:3px 10px;border-radius:var(--radius-full);margin-bottom:12px;width:fit-content}
+        .t-card blockquote{font-size:13.5px;color:var(--text-secondary);line-height:1.7;flex:1;margin-bottom:18px}
+        .t-author{border-top:1px solid var(--border-light);padding-top:14px}
+        .t-author-name{font-size:13.5px;font-weight:700}
+        .t-author-role{font-size:12px;color:var(--text-muted);margin-top:1px}
+        .t-author-meta{display:flex;justify-content:space-between;margin-top:3px;font-size:11px;color:var(--text-muted)}
+        .testi-toggle{display:none;margin:28px auto 0;text-align:center}
+        .testi-toggle .btn{font-size:14px}
+        @media(max-width:768px){
+            .testi-grid{grid-template-columns:1fr}
+            .testi-top{flex-direction:column;align-items:flex-start}
+            .testi-grid:not(.expanded) .t-card:nth-child(n+5){display:none}
+            .testi-toggle{display:block}
+            .testi-grid.expanded~.testi-toggle{display:none}
+        }
+
+        /* ===== RESULTS ===== */
+        .results-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:48px 0 44px}
+        .r-metric{background:var(--bg-dark);border-radius:var(--radius);padding:30px;text-align:center;position:relative;overflow:hidden}
+        .r-metric::before{content:'';position:absolute;top:-30px;right:-30px;width:80px;height:80px;border-radius:50%;background:rgba(0,212,170,.08)}
+        .r-metric-val{font-size:40px;font-weight:800;color:var(--text-inverse);line-height:1;position:relative}
+        .r-metric-label{font-size:12px;color:var(--text-inverse-muted);margin-top:6px;position:relative}
+        .compare{display:grid;grid-template-columns:1fr 1fr;background:var(--bg-white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .compare-col{padding:34px}
+        .compare-col:first-child{border-right:1px solid var(--border)}
+        .compare-head{font-size:16px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+        .compare-head svg{width:20px;height:20px}
+        .compare-head.bad svg{color:var(--red)}
+        .compare-head.good svg{color:var(--emerald)}
+        .compare-list li{font-size:13.5px;color:var(--text-secondary);padding:9px 0;display:flex;gap:10px;line-height:1.55}
+        .compare-list li svg{width:15px;height:15px;flex-shrink:0;margin-top:3px}
+        .compare-list.bad li svg{color:var(--text-muted)}
+        .compare-list.good li svg{color:var(--emerald)}
+        .compare-col.good-col{background:rgba(0,212,170,.02)}
+        @media(max-width:768px){
+            .results-metrics{grid-template-columns:1fr 1fr}
+            .compare{grid-template-columns:1fr}
+            .compare-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
+        }
+        @media(max-width:480px){.results-metrics{grid-template-columns:1fr}}
+
+        /* ===== FAQ ===== */
+        .faq-section{background:var(--bg-white)}
+        .faq-tabs{display:flex;gap:6px;margin:24px 0 28px}
+        .faq-tab{padding:8px 18px;border-radius:var(--radius-full);font-size:13px;font-weight:500;border:1px solid var(--border);color:var(--text-secondary);transition:all .25s var(--ease)}
+        .faq-tab:hover{border-color:var(--emerald);color:var(--emerald-dark)}
+        .faq-tab.active{background:var(--bg-dark);color:var(--text-inverse);border-color:var(--bg-dark)}
+        .faq-list{max-width:780px}
+        .faq-item{border-bottom:1px solid var(--border-light)}
+        .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 0;font-size:15.5px;font-weight:600;text-align:left;color:var(--text);transition:color .2s}
+        .faq-q:hover{color:var(--emerald-dark)}
+        .faq-q svg{width:18px;height:18px;color:var(--text-muted);transition:all .3s var(--ease);flex-shrink:0}
+        .faq-item.open .faq-q svg{transform:rotate(45deg);color:var(--emerald)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+        .faq-a-inner{padding:0 0 20px;font-size:14px;color:var(--text-secondary);line-height:1.75;max-width:640px}
+
+        /* ===== CTA SECTION ===== */
+        .cta{background:var(--bg-dark);padding:100px 0;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-40%;right:-15%;width:70%;height:140%;background:radial-gradient(ellipse,rgba(0,212,170,.06) 0%,transparent 60%);pointer-events:none}
+        .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
+        .cta-left h2{font-size:clamp(32px,4.5vw,50px);font-weight:800;line-height:1.08;color:var(--text-inverse);letter-spacing:-.02em;margin-top:12px;margin-bottom:18px}
+        .cta-left h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--emerald)}
+        .cta-left p{font-size:15.5px;color:var(--text-inverse-muted);line-height:1.7;margin-bottom:24px;max-width:430px}
+        .cta-trust{display:flex;flex-wrap:wrap;gap:14px}
+        .cta-trust-item{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--text-inverse-muted)}
+        .cta-trust-item svg{width:13px;height:13px;color:var(--emerald)}
+
+        .cta-form-card{background:var(--bg-dark-2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:32px}
+        .form-tabs{display:flex;margin-bottom:24px;background:rgba(255,255,255,.04);border-radius:var(--radius-full);overflow:hidden}
+        .form-tab{flex:1;padding:11px;text-align:center;font-size:13.5px;font-weight:600;color:var(--text-inverse-muted);cursor:pointer;transition:all .25s var(--ease);border-radius:var(--radius-full)}
+        .form-tab.active{background:var(--emerald);color:var(--bg-dark)}
+        .cta-form .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+        .cta-form .field{margin-bottom:10px}
+        .cta-form label{font-size:11.5px;font-weight:500;color:var(--text-inverse-muted);display:block;margin-bottom:5px}
+        .cta-form input,.cta-form select,.cta-form textarea{width:100%;padding:11px 14px;border-radius:var(--radius-xs);border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--text-inverse);font-size:13.5px;font-family:var(--sans);transition:all .25s var(--ease)}
+        .cta-form input::placeholder,.cta-form textarea::placeholder{color:rgba(255,255,255,.2)}
+        .cta-form input:focus,.cta-form select:focus,.cta-form textarea:focus{outline:none;border-color:var(--emerald);background:rgba(255,255,255,.06)}
+        .cta-form select{appearance:none;cursor:pointer}
+        .cta-form select option{background:var(--bg-dark);color:var(--text-inverse)}
+        .cta-form textarea{resize:vertical;min-height:72px}
+        .cta-form .btn{width:100%;justify-content:center;margin-top:6px;padding:14px;font-size:15px}
+        @media(max-width:860px){.cta-grid{grid-template-columns:1fr;gap:36px}}
+        @media(max-width:480px){.cta-form .row{grid-template-columns:1fr}}
+
+        /* ===== FOOTER ===== */
+        .footer{background:var(--bg-dark);color:var(--text-inverse-muted);padding:76px 0 0}
+        .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06)}
+        .footer-logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;color:var(--text-inverse);margin-bottom:14px}
+        .footer-logo .logo-mark{background:rgba(255,255,255,.08)}
+        .footer-tagline{font-size:13.5px;line-height:1.6;margin-bottom:22px}
+        .footer-nl label{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);display:block;margin-bottom:8px}
+        .footer-nl-row{display:flex;gap:6px}
+        .footer-nl-row input{flex:1;padding:9px 14px;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--text-inverse);font-size:12.5px}
+        .footer-nl-row input::placeholder{color:rgba(255,255,255,.25)}
+        .footer-nl-row input:focus{outline:none;border-color:var(--emerald)}
+        .footer-nl-row button{padding:9px 18px;border-radius:var(--radius-full);background:var(--emerald);color:var(--bg-dark);font-size:12.5px;font-weight:600;transition:all .25s var(--ease);white-space:nowrap}
+        .footer-nl-row button:hover{background:var(--emerald-dark)}
+        .footer-col h4{font-size:12px;font-weight:700;color:var(--text-inverse);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px}
+        .footer-col a{display:block;font-size:13.5px;padding:4px 0;transition:color .2s}
+        .footer-col a:hover{color:var(--emerald)}
+        .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:22px 0;flex-wrap:wrap;gap:16px}
+        .footer-bottom-left{font-size:12.5px}
+        .footer-bottom-links{display:flex;gap:20px}
+        .footer-bottom-links a{font-size:12.5px;transition:color .2s}
+        .footer-bottom-links a:hover{color:var(--emerald)}
+        .footer-socials{display:flex;gap:8px}
+        .footer-socials a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.05);display:grid;place-items:center;transition:all .25s var(--ease)}
+        .footer-socials a:hover{background:var(--emerald)}
+        .footer-socials a svg{width:15px;height:15px;fill:rgba(255,255,255,.5)}
+        .footer-socials a:hover svg{fill:var(--bg-dark)}
+        @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+        @media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+        .reveal.visible{opacity:1;transform:none}
+        .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:var(--bg)}
+        ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:var(--text-muted)}
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav nav-glass" id="nav">
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            ROTAS
+        </a>
+        <div class="nav-links">
+            <a href="#solutions">The Problem</a>
+            <a href="#industries">Industries</a>
+            <a href="#process">How It Works</a>
+            <a href="#results">Results</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="nav-right">
+            <a href="#results" class="nav-demo">See Results</a>
+            <a href="#contact" class="nav-cta">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <button class="hamburger" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- MOBILE -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+    <button class="mobile-close" id="closeMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="#solutions" onclick="closeM()">The Problem</a>
+    <a href="#industries" onclick="closeM()">Industries</a>
+    <a href="#process" onclick="closeM()">How It Works</a>
+    <a href="#results" onclick="closeM()">Results</a>
+    <a href="#faq" onclick="closeM()">FAQ</a>
+    <a href="#contact" class="btn btn-emerald" onclick="closeM()" style="margin-top:16px;justify-content:center">Book Free Audit</a>
+</div>
+
+<!-- ===== MARQUEE BANNER ===== -->
+<div class="marquee-wrap" style="margin-top:68px">
+    <div class="marquee-track">
+        <span class="marquee-item">Supercharge Your Business With AI <span class="sep"></span></span>
+        <span class="marquee-item">80+ Hours Saved Weekly <span class="sep"></span></span>
+
+        <span class="marquee-item">ROI in 30 Days <span class="sep"></span></span>
+        <span class="marquee-item">Supercharge Your Business With AI <span class="sep"></span></span>
+        <span class="marquee-item">80+ Hours Saved Weekly <span class="sep"></span></span>
+
+        <span class="marquee-item">ROI in 30 Days <span class="sep"></span></span>
+        <span class="marquee-item">Supercharge Your Business With AI <span class="sep"></span></span>
+        <span class="marquee-item">80+ Hours Saved Weekly <span class="sep"></span></span>
+
+        <span class="marquee-item">ROI in 30 Days <span class="sep"></span></span>
+    </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero" style="padding-top:80px">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badges reveal">
+                <span class="badge"><span class="badge-dot" style="background:var(--blue)"></span> Affordable AI Automation for SMEs</span>
+            </div>
+            <h1 class="reveal d1">Automate Your Business.<br><em>Multiply Your Output.</em></h1>
+            <p class="hero-sub reveal d2">We help SMEs reclaim <strong>80+ hours every week</strong> with intelligent, low-cost AI automation. Tangible ROI within 30 days.</p>
+            <div class="hero-pills reveal d3">
+                <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Slash Process Time by 80%</span>
+                <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Eliminate Overhead Costs</span>
+                <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Grow Revenue</span>
+            </div>
+        </div>
+        <div class="stats-bar reveal d4">
+            <div class="stat-item"><div class="stat-label">Payback Period</div><div class="stat-value">14 Days – 6 Mo.</div></div>
+            <div class="stat-item"><div class="stat-label">Tech Team</div><div class="stat-value">Not Required</div></div>
+            <div class="stat-item"><div class="stat-label">Deployment</div><div class="stat-value">2 to 8 Weeks</div></div>
+            <div class="stat-item"><div class="stat-label">Countries</div><div class="stat-value">8 Countries</div></div>
+            <div class="stat-cta-wrap">
+                <a href="#contact" class="btn btn-emerald">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trust-bar">
+    <div class="container">
+        <p class="trust-headline reveal">Automating businesses across <span>8 countries</span>. Trusted by <span>90+ businesses</span>.</p>
+        <p class="trust-sub reveal">USA &middot; UK &middot; Germany &middot; India &middot; Australia &middot; Canada &middot; South Africa &middot; Italy</p>
+        <div class="trust-tags reveal d1">
+            <span class="trust-tag">&#127891; Education</span>
+            <span class="trust-tag">&#127970; Real Estate</span>
+            <span class="trust-tag">&#128230; B2B Wholesale</span>
+            <span class="trust-tag">&#127960; Hospitality</span>
+            <span class="trust-tag">&#9881;&#65039; Manufacturing</span>
+            <span class="trust-tag">&#128722; Retail</span>
+            <span class="trust-tag">&#127973; Healthcare</span>
+            <span class="trust-tag">&#128187; Ecommerce</span>
+            <span class="trust-tag">&#9851;&#65039; Waste Mgmt</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="section" id="solutions">
+    <div class="container">
+        <div class="label reveal">The Problem</div>
+        <h2 class="title reveal d1">85% of the work your team does<br><em>is manual work.</em></h2>
+        <p class="subtitle reveal d2">The average SME burns <strong>65+ hours a week</strong> on workflows AI can handle in minutes. Your best people are stuck doing the worst tasks.</p>
+        <div class="problem-grid">
+            <div class="p-card reveal d1">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=360&fit=crop" alt="Person writing on paper" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Copy-Paste Chaos</h3><p>Staff burning hours dragging data between emails, spreadsheets, and ERPs. Every copy is a chance for costly errors.</p></div>
+            </div>
+            <div class="p-card reveal d2">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&h=360&fit=crop" alt="Person typing on computer" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Manual Re-Entry</h3><p>The same data typed into three different systems. Every re-entry multiplies errors and bleeds real money.</p></div>
+            </div>
+            <div class="p-card reveal d3">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=360&fit=crop" alt="Stack of invoices" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Data Entry Backlog</h3><p>Invoices, purchase orders, and sales data piling up. Your backlog grows weekly while your team scrambles.</p></div>
+            </div>
+            <div class="p-card reveal d1">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=360&fit=crop" alt="Dashboard and spreadsheets" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Manual Reconciliation</h3><p>Hours cross-checking transactions, POs, and invoices. Month-end closes take days instead of hours.</p></div>
+            </div>
+            <div class="p-card reveal d2">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=360&fit=crop" alt="Email inbox overload" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Delayed Responses</h3><p>Customer and vendor queries sitting in inboxes for hours. Revenue leaking through slow response times.</p></div>
+            </div>
+            <div class="p-card reveal d3">
+                <div class="p-card-visual"><img src="https://images.unsplash.com/photo-1664575198308-3959904fa430?w=600&h=360&fit=crop" alt="Person writing a quote" loading="lazy"></div>
+                <div class="p-card-body"><h3><span class="warn-dot"></span>Quote Generation</h3><p>Sales teams spending 2-3 hours crafting proposals that AI can produce in 30 seconds. Speed wins deals.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section process-section" id="process">
+    <div class="container">
+        <div class="label reveal">Our Process</div>
+        <h2 class="title reveal d1">5-Step Precision<br><em>Framework.</em></h2>
+        <p class="subtitle reveal d2">A repeatable, time-tested system for delivering measurable AI transformation inside real SME businesses.</p>
+        <div class="process-track">
+            <div class="step reveal d1"><div class="step-num">01</div><h3>Free Audit</h3><p>We map your business &mdash; workflows, team structure, and bottlenecks eating your time. No obligation.</p><span class="step-tag">Free &middot; No Commitment</span><span class="step-connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+            <div class="step reveal d2"><div class="step-num">02</div><h3>Discovery Calls</h3><p>Deep dive into your workflows. We identify highest-ROI opportunities and map your full tech stack.</p><span class="step-tag">2&ndash;3 Sessions</span><span class="step-connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+            <div class="step reveal d3"><div class="step-num">03</div><h3>Solutions Design</h3><p>Process Maps, Architecture Blueprints, SOPs, AI Agent designs, and a full ROI projection.</p><span class="step-tag">Full Deliverables</span><span class="step-connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+            <div class="step reveal d4"><div class="step-num">04</div><h3>Implementation</h3><p>We build your AI agents on your real data. You see it working before we hand it over.</p><span class="step-tag">4&ndash;6 Weeks</span><span class="step-connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span></div>
+            <div class="step reveal d5"><div class="step-num">05</div><h3>Testing &amp; Training</h3><p>Rigorous testing against manual methods, full docs, and hands-on staff training.</p><span class="step-tag">30-Day Support</span></div>
+        </div>
+        <div style="text-align:center;margin-top:48px" class="reveal"><a href="#contact" class="btn btn-dark btn-lg">Get Started <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
+    </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="section" id="industries">
+    <div class="container">
+        <div class="label reveal">Industries</div>
+        <h2 class="title reveal d1">Across Multiple Industries<br><em>and Workflows.</em></h2>
+        <div class="ind-tabs reveal d2">
+            <button class="ind-tab active" data-tab="manufacturing">&#9881;&#65039; Manufacturing</button>
+            <button class="ind-tab" data-tab="retail">&#128722; Retail</button>
+            <button class="ind-tab" data-tab="healthcare">&#127973; Healthcare</button>
+            <button class="ind-tab" data-tab="ecommerce">&#128187; Ecommerce</button>
+            <button class="ind-tab" data-tab="realestate">&#127970; Real Estate</button>
+            <button class="ind-tab" data-tab="education">&#127891; Education</button>
+            <button class="ind-tab" data-tab="wholesale">&#128230; B2B Wholesale</button>
+            <button class="ind-tab" data-tab="hospitality">&#127960; Hospitality</button>
+        </div>
+
+        <!-- Manufacturing -->
+        <div class="ind-panel active" id="tab-manufacturing">
+            <div>
+                <h3>Automated order processing. Automated RFQ/Quotes. No production bottlenecks and vendor chaos.</h3>
+                <div class="ind-badge">&#9733; 2.3x higher leads, compliance editing automated</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Order Processing &amp; Fulfilment</span><span class="ind-feat-result">60&ndash;80% time saved</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Demand Forecasting &amp; Inventory</span><span class="ind-feat-result">20&ndash;30% inventory cut</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Compliance &amp; Audit Automation</span><span class="ind-feat-result">Zero missed filings</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>Procurement &amp; Vendor Mgmt</span><span class="ind-feat-result">8&ndash;15% cost reduction</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">70+ hrs</div><div class="snap-desc">A week wasted</div></div>
+                <div class="snap-row"><div class="snap-val">65%</div><div class="snap-desc">Avg time saved: Admin</div></div>
+                <div class="snap-row"><div class="snap-val">15&ndash;20%</div><div class="snap-desc">Production capacity unlocked</div></div>
+                <div class="snap-row"><div class="snap-val">18&ndash;23%</div><div class="snap-desc">Revenue growth YOY</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Manufacturing Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Retail -->
+        <div class="ind-panel" id="tab-retail">
+            <div>
+                <h3>Billing, stock management, returns, and customer queries handled by staff who should be selling.</h3>
+                <div class="ind-badge">&#9733; Zero billing staff needed, pilferage detection with computer vision</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Automated Billing &amp; Checkout</span><span class="ind-feat-result">Zero billing staff</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Inventory &amp; Reorder Triggers</span><span class="ind-feat-result">20&ndash;30% stock reduction</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Computer Vision (Pilferage)</span><span class="ind-feat-result">Lowest pilferage rates</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Customer Support AI</span><span class="ind-feat-result">Instant responses 24/7</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">23%</div><div class="snap-desc">Cost reduction on avg</div></div>
+                <div class="snap-row"><div class="snap-val">Zero</div><div class="snap-desc">Billing staff needed</div></div>
+                <div class="snap-row"><div class="snap-val">AI-powered</div><div class="snap-desc">Pilferage detection</div></div>
+                <div class="snap-row"><div class="snap-val">New</div><div class="snap-desc">Store location optimisation</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Retail Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="ind-panel" id="tab-healthcare">
+            <div>
+                <h3>Admin overhead is crushing your margins. Scheduling, billing, and patient comms done manually.</h3>
+                <div class="ind-badge">&#9733; HIPAA compliant. Patient satisfaction dramatically increased.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Appointment Scheduling &amp; Reminders</span><span class="ind-feat-result">No-show rate cut 40%</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Insurance Verification</span><span class="ind-feat-result">Hours &rarr; minutes</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Billing &amp; Claims Processing</span><span class="ind-feat-result">Faster reimbursements</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Patient Communications AI</span><span class="ind-feat-result">Automated follow-ups</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">70%</div><div class="snap-desc">Time reduction in insurance documentation</div></div>
+                <div class="snap-row"><div class="snap-val">Admin load</div><div class="snap-desc">Dramatically reduced</div></div>
+                <div class="snap-row"><div class="snap-val">25%+</div><div class="snap-desc">Patient satisfaction increase</div></div>
+                <div class="snap-row"><div class="snap-val">HIPAA</div><div class="snap-desc">Full compliance</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Healthcare Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Ecommerce -->
+        <div class="ind-panel" id="tab-ecommerce">
+            <div>
+                <h3>Returns, cataloguing, customer support, photoshoots, logistics &mdash; all manual, all expensive.</h3>
+                <div class="ind-badge">&#9733; AI photoshoots at 1/10th of the cost at higher conversion rates. Entire ops automated.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Returns &amp; Logistics Processing</span><span class="ind-feat-result">80% less manual work</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">AI Product Photoshoots</span><span class="ind-feat-result">$50K &rarr; $1K per shoot</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Customer Support Automation</span><span class="ind-feat-result">24/7 instant resolution</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Catalogue &amp; Accounting AI</span><span class="ind-feat-result">Hours &rarr; minutes</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">Improved</div><div class="snap-desc">Inventory planning &amp; 10% reduced deadstock</div></div>
+                <div class="snap-row"><div class="snap-val">85%</div><div class="snap-desc">Photography cost cut</div></div>
+                <div class="snap-row"><div class="snap-val">40%</div><div class="snap-desc">OH reduction target</div></div>
+                <div class="snap-row"><div class="snap-val">Improved</div><div class="snap-desc">Inventory analytics &amp; reduced procurement costs</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Ecommerce Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div class="ind-panel" id="tab-realestate">
+            <div>
+                <h3>Tenant emails, maintenance, lease renewals &mdash; all trapped in inboxes and spreadsheets.</h3>
+                <div class="ind-badge">&#9733; Zero missed renewals. 30% downtime reduction on maintenance.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Tenant Communications &amp; Triage</span><span class="ind-feat-result">Auto-categorise &amp; respond</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Maintenance Request Scheduling</span><span class="ind-feat-result">30% downtime reduction</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Lease Renewal Tracking</span><span class="ind-feat-result">Zero missed renewals</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Financial Reconciliation</span><span class="ind-feat-result">Month-end in hours</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">80%</div><div class="snap-desc">Faster online listings</div></div>
+                <div class="snap-row"><div class="snap-val">Zero</div><div class="snap-desc">Missed renewals</div></div>
+                <div class="snap-row"><div class="snap-val">~30%</div><div class="snap-desc">Maintenance downtime cut</div></div>
+                <div class="snap-row"><div class="snap-val">30%</div><div class="snap-desc">Higher client conversion</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Real Estate Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="ind-panel" id="tab-education">
+            <div>
+                <h3>Collections, scheduling, HR, parent communications &mdash; enormous admin burden on school staff.</h3>
+                <div class="ind-badge">&#9733; On-time collections up 20%. All office admin automated.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Fee Collection &amp; Reminders</span><span class="ind-feat-result">On-time up by 20%</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Timetable &amp; Scheduling AI</span><span class="ind-feat-result">Zero conflicts</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Parent Communications</span><span class="ind-feat-result">Automated &amp; instant</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">HR &amp; Payroll Admin</span><span class="ind-feat-result">90% less manual work</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">Improved</div><div class="snap-desc">Property maintenance</div></div>
+                <div class="snap-row"><div class="snap-val">20%</div><div class="snap-desc">Collections improvement</div></div>
+                <div class="snap-row"><div class="snap-val">65+/week</div><div class="snap-desc">Admin hours saved</div></div>
+                <div class="snap-row"><div class="snap-val">25%</div><div class="snap-desc">Higher engagement lesson plans</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Education Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- B2B Wholesale -->
+        <div class="ind-panel" id="tab-wholesale">
+            <div>
+                <h3>The largest SME segment. And the most buried in spreadsheets and manual order processing.</h3>
+                <div class="ind-badge">&#9733; ERP fully integrated. AR automation. Dynamic pricing for 5&ndash;10% margin lift.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Order Entry &amp; Fulfilment</span><span class="ind-feat-result">60&ndash;80% time saved</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">AR Collections &amp; Reminders</span><span class="ind-feat-result">Faster cash flow</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Inventory &amp; Reorder Triggers</span><span class="ind-feat-result">20&ndash;30% stock reduction</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Dynamic Pricing Engine</span><span class="ind-feat-result">5&ndash;10% margin lift</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">Improved</div><div class="snap-desc">Supplier analytics</div></div>
+                <div class="snap-row"><div class="snap-val">8&ndash;15%</div><div class="snap-desc">Procurement cost cut</div></div>
+                <div class="snap-row"><div class="snap-val">Full</div><div class="snap-desc">ERP integration</div></div>
+                <div class="snap-row"><div class="snap-val">1.5&ndash;6%</div><div class="snap-desc">Increased margins</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your B2B Wholesale Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Hospitality -->
+        <div class="ind-panel" id="tab-hospitality">
+            <div>
+                <h3>Reservations, supplier orders, staff scheduling, and guest comms &mdash; all in different systems, all manual.</h3>
+                <div class="ind-badge">&#9733; Guest satisfaction up. Staff scheduling automated. Supplier costs reduced.</div>
+                <div class="ind-features">
+                    <div class="ind-feat"><span class="ind-feat-name">Reservation &amp; Booking AI</span><span class="ind-feat-result">Zero double-bookings</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Guest Communications</span><span class="ind-feat-result">Instant 24/7 responses</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Supplier &amp; Procurement AI</span><span class="ind-feat-result">10&ndash;15% cost reduction</span></div>
+                    <div class="ind-feat"><span class="ind-feat-name">Staff Scheduling Automation</span><span class="ind-feat-result">60% planning time saved</span></div>
+                </div>
+            </div>
+            <div class="snapshot">
+                <div class="snapshot-label">Snapshot</div>
+                <div class="snap-row"><div class="snap-val">10%</div><div class="snap-desc">Reduction in property maintenance</div></div>
+                <div class="snap-row"><div class="snap-val">Automated</div><div class="snap-desc">Tariff optimisation</div></div>
+                <div class="snap-row"><div class="snap-val">3&ndash;10%</div><div class="snap-desc">Margin increase</div></div>
+                <div class="snap-row"><div class="snap-val">10&ndash;15%</div><div class="snap-desc">Procurement savings</div></div>
+                <div class="snap-cta-text">Book a Free Audit for your Hospitality Business</div>
+                <a href="#contact" class="btn btn-white">Book Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="15" height="15"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section testi-section" id="testimonials">
+    <div class="container">
+        <div class="testi-top">
+            <div>
+                <div class="label reveal">Client Stories</div>
+                <h2 class="title reveal d1">Results Speak Louder<br><em>Than Promises.</em></h2>
+            </div>
+            <div class="testi-counters reveal d2">
+                <div class="testi-counter"><strong>98%</strong><span>Positive feedback</span></div>
+                <div class="testi-counter"><strong>80%+</strong><span>Re-engagement</span></div>
+                <div class="testi-counter"><strong>8</strong><span>Countries</span></div>
+            </div>
+        </div>
+        <div class="testi-grid">
+            <div class="t-card reveal d1">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">ROI in 2 weeks</span>
+                <blockquote>"We were buried in manual order processing every morning. ROTAS built an automation that handled everything overnight. Our ops team now focuses on real operations, not data entry. ROI hit by week two."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Michael T.</div><div class="t-author-role">Operations Director &middot; Specialty Food Manufacturer</div><div class="t-author-meta"><span>120 employees</span><span>Illinois, USA</span></div></div>
+            </div>
+            <div class="t-card reveal d2">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">5x faster documents</span>
+                <blockquote>"I was sceptical &mdash; we'd heard AI overpromises before. But the proof of concept ran on our actual BL data and it genuinely worked. We're processing freight documents five times faster now."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Sarah K.</div><div class="t-author-role">Operations Manager &middot; Freight Brokerage</div><div class="t-author-meta"><span>45 employees</span><span>Texas, USA</span></div></div>
+            </div>
+            <div class="t-card reveal d3">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">6 weeks to full automation</span>
+                <blockquote>"The free diagnostic call itself delivered a roadmap. They understood our industry's pain immediately. Within six weeks we went from chaos to fully automated workflows."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; James R.</div><div class="t-author-role">Owner &middot; B2B Wholesale Distributor</div><div class="t-author-meta"><span>80 employees</span><span>Manchester, UK</span></div></div>
+            </div>
+            <div class="t-card reveal d1">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">2x leads, 1.5x close rate</span>
+                <blockquote>"Our lead volume has doubled since we automated outreach and follow-up. Deal closing rates are around 1.5 times what they were. The numbers don't lie."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Fahad A.</div><div class="t-author-role">CEO &middot; Textile Manufacturing</div><div class="t-author-meta"><span>200 employees</span><span>Tirupur, India</span></div></div>
+            </div>
+            <div class="t-card reveal d2">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">50% admin cost cut</span>
+                <blockquote>"We halved our admin expenses from discovery to implementation. Extremely comprehensive. It was like having world-class consultants working alongside us daily."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Derrek W.</div><div class="t-author-role">VP of IT &middot; Tech Services</div><div class="t-author-meta"><span>150 employees</span><span>Boston, USA</span></div></div>
+            </div>
+            <div class="t-card reveal d3">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">ROI by month 2</span>
+                <blockquote>"Pricing is extremely affordable and ROI hit by month 2. Dramatic improvements in customer satisfaction scores and team productivity across the board."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Fiona M.</div><div class="t-author-role">Practice Manager &middot; Healthcare Clinic</div><div class="t-author-meta"><span>25 employees</span><span>Hamburg, Germany</span></div></div>
+            </div>
+            <div class="t-card reveal d1">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">Zero billing staff needed</span>
+                <blockquote>"Our retail store now needs no billing staff. We automated the entire process with self-checkout and our pilferage rates are down to their lowest using ROTAS's computer vision tool."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Krivan S.</div><div class="t-author-role">Director &middot; FMCG Retail</div><div class="t-author-meta"><span>40 employees</span><span>Bangalore, India</span></div></div>
+            </div>
+            <div class="t-card reveal d2">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">50x photography cost cut</span>
+                <blockquote>"Our entire Customer support, Photoshoots, Logistics, Returns, Cataloguing, HR, Accounting is now handled by AI. A shoot that cost INR 50,000 now costs us barely 1000 and a fraction of the time."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Joshua N.</div><div class="t-author-role">Founder &middot; Ecommerce</div><div class="t-author-meta"><span>25 employees</span><span>Durban, South Africa</span></div></div>
+            </div>
+            <div class="t-card reveal d3">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">20% production increase</span>
+                <blockquote>"The dashboards, flagging, and reconciliation systems set up are extremely comprehensive. We now get deeper insights into our business. We have unlocked a 15-20% increase in production capacity."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Dulip P.</div><div class="t-author-role">Plant Manager &middot; Chemicals Manufacturing</div><div class="t-author-meta"><span>100 employees</span><span>Hubli, India</span></div></div>
+            </div>
+            <div class="t-card reveal d1">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">Full ERP AI integration</span>
+                <blockquote>"Our entire ERP is integrated with ROTAS's AI. We now spot opportunities to cut cost and increase revenue. Our patient satisfaction has dramatically increased."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Nikita V.</div><div class="t-author-role">Operations Head &middot; Healthcare Network</div><div class="t-author-meta"><span>60 employees</span><span>Atlanta, USA</span></div></div>
+            </div>
+            <div class="t-card reveal d2">
+                <div class="t-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <span class="t-tag">20% collection improvement</span>
+                <blockquote>"At our school we have automated nearly all office work. On-time collections are up by 20%."</blockquote>
+                <div class="t-author"><div class="t-author-name">&mdash; Massimo L.</div><div class="t-author-role">Principal &middot; Private School</div><div class="t-author-meta"><span>50 staff</span><span>Biella, Italy</span></div></div>
+            </div>
+        </div>
+        <div class="testi-toggle" id="testiToggle"><button class="btn btn-ghost" onclick="document.querySelector('.testi-grid').classList.add('expanded');this.parentElement.style.display='none'">See More Testimonials <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M6 9l6 6 6-6"/></svg></button></div>
+        <div style="text-align:center;margin-top:48px" class="reveal"><a href="#contact" class="btn btn-dark btn-lg">Book Your Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
+    </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="section" id="results">
+    <div class="container">
+        <div class="label reveal">Results</div>
+        <h2 class="title reveal d1">Eliminate Manual Work.<br><em>Deliver Real Results.</em></h2>
+        <div class="results-metrics">
+            <div class="r-metric reveal d1"><div class="r-metric-val">80%</div><div class="r-metric-label">Process time cut</div></div>
+            <div class="r-metric reveal d2"><div class="r-metric-val">65+</div><div class="r-metric-label">Hours saved per week</div></div>
+            <div class="r-metric reveal d3"><div class="r-metric-val">30%+</div><div class="r-metric-label">Revenue growth seen</div></div>
+            <div class="r-metric reveal d4"><div class="r-metric-val">40%</div><div class="r-metric-label">Admin overhead cut</div></div>
+        </div>
+        <div class="compare reveal">
+            <div class="compare-col">
+                <div class="compare-head bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Before ROTAS</div>
+                <ul class="compare-list bad">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>Staff reads every inbound order email manually &mdash; 2&ndash;4 hrs/day</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>Data copy-pasted from email into ERP. One typo = wrong shipment</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>Vendor RFQs sent one by one. Responses compared manually</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>Exceptions handled by whoever sees the email first</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>Monthly reports built in Excel every Friday afternoon</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1.5"/></svg>You find out about problems after customers complain</li>
+                </ul>
+            </div>
+            <div class="compare-col good-col">
+                <div class="compare-head good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>After ROTAS</div>
+                <ul class="compare-list good">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI reads, parses, and validates every order automatically &mdash; overnight</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Data pushed directly to ERP. Exceptions flagged to the right person</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Smart vendor matching compares live pricing in real time</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Exception logic routes issues with full context to the right team member</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Live dashboard, always updated &mdash; zero manual reporting effort</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>You get alerts before problems become customer complaints</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:48px" class="reveal"><a href="#process" class="btn btn-dark btn-lg">See How It Works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a></div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq-section" id="faq">
+    <div class="container">
+        <div class="label reveal">FAQ</div>
+        <h2 class="title reveal d1">Frequently Asked<br><em>Questions.</em></h2>
+        <div class="faq-list">
+            <div class="faq-item"><button class="faq-q">Do I need a tech team to work with you? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">No. We handle everything end-to-end &mdash; from audit and design through implementation and training. You don't need developers, data scientists, or IT staff. We work directly with your operations team.</div></div></div>
+            <div class="faq-item"><button class="faq-q">What is your ROI timeline? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Most clients see measurable ROI within 14 days to 6 months, depending on complexity. Our fastest payback was 11 days for an order processing automation. We'll give you a realistic estimate during the free audit.</div></div></div>
+            <div class="faq-item"><button class="faq-q">What if it doesn't work the way I expect? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">We build a proof of concept on your real data before full implementation. You see it working before you commit. If the POC doesn't deliver, you walk away with zero risk. All engagements include 30 days of post-launch support.</div></div></div>
+            <div class="faq-item"><button class="faq-q">Is my data secure? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Absolutely. We follow industry-standard security protocols including encryption at rest and in transit, role-based access controls, and full compliance with GDPR and HIPAA where applicable. Your data never leaves your environment unless you explicitly authorize it.</div></div></div>
+            <div class="faq-item"><button class="faq-q">How long does implementation take? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Typical implementations take 4&ndash;6 weeks from discovery to deployment. Simple automations can be live in 2 weeks. Complex multi-system integrations may take up to 8 weeks. We'll scope this during your free audit.</div></div></div>
+            <div class="faq-item"><button class="faq-q">What industries do you specialize in? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">We work across Manufacturing, Retail, Healthcare, Ecommerce, Real Estate, Education, B2B Wholesale, Hospitality, Waste Management, and Logistics. Our framework is industry-agnostic &mdash; we adapt it to your specific workflows.</div></div></div>
+            <div class="faq-item"><button class="faq-q">How much does it cost? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">We are low priced, making us suitable for SME businesses. We provide an entire ROI map post our calls so you can see the investment you are making.</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section class="cta" id="contact">
+    <div class="container">
+        <div class="cta-grid">
+            <div class="cta-left">
+                <div class="label" style="color:var(--emerald)">Get Started</div>
+                <h2>Stop Doing<br><em>Manual Work.</em></h2>
+                <p>Your team's time is worth more than copy-paste. Book a free 15-minute diagnostic &mdash; we'll map your top automations, estimate your ROI, and help you scale faster than ever.</p>
+                <div class="cta-trust">
+                    <span class="cta-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>8 Countries</span>
+                    <span class="cta-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>90+ Businesses</span>
+                    <span class="cta-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Data Secure</span>
+                    <span class="cta-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Zero Obligation</span>
+                </div>
+            </div>
+            <div class="cta-form-card">
+                <div class="form-tabs">
+                    <div class="form-tab active">Book Free Audit</div>
+                    <div class="form-tab">Free AI Guide</div>
+                </div>
+                <form class="cta-form" onsubmit="return submitForm(event)">
+                    <div class="row">
+                        <div><label>Name *</label><input type="text" placeholder="Your name" required></div>
+                        <div><label>Business Name *</label><input type="text" placeholder="Your company" required></div>
+                    </div>
+                    <div class="field"><label>Email *</label><input type="email" placeholder="you@company.com" required></div>
+                    <div class="row">
+                        <div><label>Country</label><select><option value="">Select country</option><option>USA</option><option>UK</option><option>Germany</option><option>India</option><option>Australia</option><option>Canada</option><option>South Africa</option><option>Italy</option><option>Other</option></select></div>
+                        <div><label>Industry</label><select><option value="">Select industry</option><option>Manufacturing</option><option>Retail</option><option>Healthcare</option><option>Ecommerce</option><option>Real Estate</option><option>Education</option><option>B2B Wholesale</option><option>Hospitality</option><option>Waste Management</option><option>Other</option></select></div>
+                    </div>
+                    <div class="field"><label>Tell us about your biggest workflow headache</label><textarea placeholder="We spend hours every day on..."></textarea></div>
+                    <button type="submit" class="btn btn-emerald">Book My Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                    ROTAS Automation
+                </div>
+                <p class="footer-tagline">AI automation sprints for SMEs that think bigger.<br>Speed. Accuracy. Results.</p>
+                <div class="footer-nl">
+                    <label>Get free automation guides</label>
+                    <div class="footer-nl-row"><input type="email" placeholder="Your email"><button>Subscribe</button></div>
+                </div>
+            </div>
+            <div class="footer-col"><h4>Solutions</h4><a href="#solutions">Order Processing</a><a href="#solutions">Procurement &amp; Vendor AI</a><a href="#solutions">Document Processing</a><a href="#solutions">Demand Forecasting</a><a href="#solutions">Customer Support AI</a></div>
+            <div class="footer-col"><h4>Industries</h4><a href="#industries">Manufacturing</a><a href="#industries">Logistics &amp; Freight</a><a href="#industries">B2B Wholesale</a><a href="#industries">Property Management</a><a href="#industries">Healthcare Clinics</a></div>
+            <div class="footer-col"><h4>Company</h4><a href="#">About ROTAS</a><a href="#testimonials">Case Studies</a><a href="#">YouTube Channel</a><a href="#">LinkedIn</a><a href="#contact">Contact Us</a></div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">&copy; 2026 ROTAS Automation. All rights reserved.</div>
+            <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+            <div class="footer-socials">
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('nav-glass',window.scrollY>10)});
+document.getElementById('nav').classList.add('nav-glass');
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),overlay=document.getElementById('mobileOverlay'),drawer=document.getElementById('mobileDrawer'),closeBtn=document.getElementById('closeMenu');
+function openM(){overlay.classList.add('open');drawer.classList.add('open');document.body.style.overflow='hidden'}
+function closeM(){overlay.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow=''}
+menuBtn.addEventListener('click',openM);
+overlay.addEventListener('click',closeM);
+closeBtn.addEventListener('click',closeM);
+
+// Industry tabs
+document.querySelectorAll('.ind-tab').forEach(t=>{t.addEventListener('click',()=>{
+    document.querySelectorAll('.ind-tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.ind-panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('tab-'+t.dataset.tab).classList.add('active');
+})});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
+    const item=q.parentElement,ans=item.querySelector('.faq-a'),isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+    if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+})});
+
+
+
+// Form tabs
+document.querySelectorAll('.form-tab').forEach(t=>{t.addEventListener('click',()=>{
+    document.querySelectorAll('.form-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
+})});
+
+// Form submit
+function submitForm(e){
+    e.preventDefault();
+    const btn=e.target.querySelector('button[type="submit"]');
+    btn.textContent='Submitted! We\'ll be in touch.';btn.style.background='#00b894';
+    setTimeout(()=>{btn.innerHTML='Book My Free Audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>';btn.style.background='';e.target.reset()},3000);
+    return false;
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+
+// Particle Network
+(function(){
+    const canvas=document.getElementById('heroCanvas');
+    if(!canvas)return;
+    const ctx=canvas.getContext('2d');
+    let w,h,particles=[];
+    const PARTICLE_COUNT=90;
+    const CONNECT_DIST=140;
+    const MOUSE_RADIUS=180;
+    let mouse={x:-9999,y:-9999};
+
+    function resize(){
+        const hero=canvas.parentElement;
+        w=canvas.width=hero.offsetWidth;
+        h=canvas.height=hero.offsetHeight;
+    }
+
+    function createParticles(){
+        particles=[];
+        for(let i=0;i<PARTICLE_COUNT;i++){
+            particles.push({
+                x:Math.random()*w,
+                y:Math.random()*h,
+                vx:(Math.random()-.5)*.4,
+                vy:(Math.random()-.5)*.4,
+                r:Math.random()*2+1,
+                pulse:Math.random()*Math.PI*2,
+                pulseSpeed:.01+Math.random()*.02
+            });
+        }
+    }
+
+    function draw(){
+        ctx.clearRect(0,0,w,h);
+
+        // Draw connections
+        for(let i=0;i<particles.length;i++){
+            for(let j=i+1;j<particles.length;j++){
+                const dx=particles[i].x-particles[j].x;
+                const dy=particles[i].y-particles[j].y;
+                const dist=Math.sqrt(dx*dx+dy*dy);
+                if(dist<CONNECT_DIST){
+                    const alpha=.12*(1-dist/CONNECT_DIST);
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x,particles[i].y);
+                    ctx.lineTo(particles[j].x,particles[j].y);
+                    ctx.strokeStyle='rgba(0,212,170,'+alpha+')';
+                    ctx.lineWidth=.6;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Draw mouse connections
+        for(let i=0;i<particles.length;i++){
+            const dx=particles[i].x-mouse.x;
+            const dy=particles[i].y-mouse.y;
+            const dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<MOUSE_RADIUS){
+                const alpha=.25*(1-dist/MOUSE_RADIUS);
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(mouse.x,mouse.y);
+                ctx.strokeStyle='rgba(0,212,170,'+alpha+')';
+                ctx.lineWidth=.8;
+                ctx.stroke();
+            }
+        }
+
+        // Draw particles
+        for(let p of particles){
+            p.pulse+=p.pulseSpeed;
+            const glow=.3+.3*Math.sin(p.pulse);
+            const gradient=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3);
+            gradient.addColorStop(0,'rgba(0,212,170,'+(glow+.3)+')');
+            gradient.addColorStop(1,'rgba(0,212,170,0)');
+            ctx.beginPath();
+            ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
+            ctx.fillStyle=gradient;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle='rgba(0,212,170,'+(glow+.4)+')';
+            ctx.fill();
+        }
+    }
+
+    function update(){
+        for(let p of particles){
+            p.x+=p.vx;
+            p.y+=p.vy;
+            if(p.x<0)p.x=w;
+            if(p.x>w)p.x=0;
+            if(p.y<0)p.y=h;
+            if(p.y>h)p.y=0;
+
+            // Subtle mouse repulsion
+            const dx=p.x-mouse.x;
+            const dy=p.y-mouse.y;
+            const dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<MOUSE_RADIUS&&dist>0){
+                const force=.15*(1-dist/MOUSE_RADIUS);
+                p.vx+=dx/dist*force;
+                p.vy+=dy/dist*force;
+            }
+            // Dampen velocity
+            p.vx*=.995;
+            p.vy*=.995;
+            // Keep minimum speed
+            const speed=Math.sqrt(p.vx*p.vx+p.vy*p.vy);
+            if(speed<.15){
+                p.vx=(Math.random()-.5)*.3;
+                p.vy=(Math.random()-.5)*.3;
+            }
+        }
+    }
+
+    function loop(){
+        update();
+        draw();
+        requestAnimationFrame(loop);
+    }
+
+    canvas.addEventListener('mousemove',e=>{
+        const rect=canvas.getBoundingClientRect();
+        mouse.x=e.clientX-rect.left;
+        mouse.y=e.clientY-rect.top;
+    });
+    canvas.addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+
+    window.addEventListener('resize',()=>{resize();createParticles();});
+    resize();
+    createParticles();
+    loop();
+})();
+</script>
+</body>
+</html>
