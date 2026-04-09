@@ -45,8 +45,8 @@
         /* ── HEADER ── */
         .site-header{background:var(--bg-dark);border-bottom:1px solid rgba(255,255,255,.07);padding:16px 0}
         .site-header .container{display:flex;align-items:center;justify-content:space-between}
-        .site-logo{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text-inverse);letter-spacing:.5px}
-        .site-logo span{color:var(--emerald)}
+        .site-logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;color:var(--text-inverse);letter-spacing:-.03em}
+        .site-logo .logo-mark{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:9px;display:grid;place-items:center}
 
         /* ── HERO ── */
         .hero{position:relative;padding:70px 0 80px;overflow:hidden;background:var(--bg-dark);color:var(--text-inverse)}
@@ -232,7 +232,10 @@
 <!-- ═══════════ HEADER ═══════════ -->
 <header class="site-header">
     <div class="container">
-        <div class="site-logo">ROTAS <span>Automation</span></div>
+        <div class="site-logo">
+            <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            ROTAS
+        </div>
         <div style="display:flex;gap:12px;align-items:center">
             <a href="index.html" class="cta-btn" style="padding:10px 24px;font-size:14px;background:transparent;border:1.5px solid var(--emerald);color:var(--emerald)">Home</a>
             <a href="#audit" class="cta-btn" style="padding:10px 24px;font-size:14px">Book Free Audit &rarr;</a>
