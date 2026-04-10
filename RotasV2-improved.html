@@ -278,12 +278,16 @@
         .marquee-item .sep{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.2);flex-shrink:0}
 
         /* ===== HERO ===== */
-        .hero{padding:130px 0 70px;position:relative;overflow:hidden;background:var(--bg-dark)}
-        .hero::before{content:'';position:absolute;top:-40%;right:-20%;width:80%;height:120%;background:radial-gradient(ellipse,rgba(0,212,170,.06) 0%,transparent 65%);pointer-events:none}
-        .hero::after{content:'';position:absolute;bottom:-50%;left:-10%;width:60%;height:100%;background:radial-gradient(ellipse,rgba(59,130,246,.04) 0%,transparent 60%);pointer-events:none}
+        .hero{padding:130px 0 70px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 20% 0%,#0a1628 0%,#060912 50%,#02040a 100%)}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 75% 30%,rgba(0,212,170,.18) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 20% 80%,rgba(139,92,246,.15) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(0,180,200,.08) 0%,transparent 70%);pointer-events:none;animation:heroFloat 18s ease-in-out infinite alternate}
+        .hero::after{content:'';position:absolute;inset:0;background:conic-gradient(from 180deg at 70% 40%,transparent 0deg,rgba(0,212,170,.06) 90deg,transparent 180deg,rgba(139,92,246,.05) 270deg,transparent 360deg);pointer-events:none;filter:blur(60px);animation:heroSwirl 25s linear infinite}
+        @keyframes heroFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-2%,1%) scale(1.05)}100%{transform:translate(2%,-1%) scale(1.02)}}
+        @keyframes heroSwirl{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         .hero-grid{display:none}
-        .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
-        .hero:hover .hero-canvas{pointer-events:auto}
+        .hero-canvas{display:none}
+        .hero-streaks{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+        .hero-streaks::before,.hero-streaks::after{content:'';position:absolute;width:200%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,170,.3),transparent);top:35%;left:-50%;transform:rotate(-8deg);filter:blur(.5px)}
+        .hero-streaks::after{top:65%;background:linear-gradient(90deg,transparent,rgba(139,92,246,.25),transparent);transform:rotate(6deg)}
         .hero .container{position:relative;z-index:1}
         .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
         .hero .badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.55);font-size:12px}
@@ -582,7 +586,7 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero" style="padding-top:80px">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-streaks"></div>
     <div class="container">
         <div class="hero-content">
             <div class="hero-badges reveal">

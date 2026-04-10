@@ -49,8 +49,15 @@
         .site-logo .logo-mark{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:9px;display:grid;place-items:center}
 
         /* ── HERO ── */
-        .hero{position:relative;padding:70px 0 80px;overflow:hidden;background:var(--bg-dark);color:var(--text-inverse)}
-        .hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+        .hero{position:relative;padding:70px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 20% 0%,#0a1628 0%,#060912 50%,#02040a 100%);color:var(--text-inverse)}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 75% 30%,rgba(0,212,170,.18) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 20% 80%,rgba(139,92,246,.15) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 50% 50%,rgba(0,180,200,.08) 0%,transparent 70%);pointer-events:none;animation:heroFloat 18s ease-in-out infinite alternate;z-index:0}
+        .hero::after{content:'';position:absolute;inset:0;background:conic-gradient(from 180deg at 70% 40%,transparent 0deg,rgba(0,212,170,.06) 90deg,transparent 180deg,rgba(139,92,246,.05) 270deg,transparent 360deg);pointer-events:none;filter:blur(60px);animation:heroSwirl 25s linear infinite;z-index:0}
+        @keyframes heroFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-2%,1%) scale(1.05)}100%{transform:translate(2%,-1%) scale(1.02)}}
+        @keyframes heroSwirl{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .hero-canvas{display:none}
+        .hero-streaks{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+        .hero-streaks::before,.hero-streaks::after{content:'';position:absolute;width:200%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,170,.3),transparent);top:35%;left:-50%;transform:rotate(-8deg);filter:blur(.5px)}
+        .hero-streaks::after{top:65%;background:linear-gradient(90deg,transparent,rgba(139,92,246,.25),transparent);transform:rotate(6deg)}
         .hero .container{position:relative;z-index:1}
         @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
         .hero h1{font-family:var(--serif);font-size:clamp(32px,5.5vw,54px);line-height:1.15;font-weight:400;margin-bottom:22px;max-width:700px;color:var(--text-inverse)}
@@ -245,7 +252,7 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-streaks"></div>
     <div class="container" style="position:relative;z-index:1">
         <h1>Your Business Is Bleeding Money Each Day You <em>Don't</em> Automate</h1>
         <p class="hero-sub">We build and implement low-cost AI systems for SMEs &mdash; helping you cut costs, grow revenue, and outperform your competition. Across <b style="color:var(--emerald)">8 countries</b> and <b style="color:var(--emerald)">90+ businesses transformed</b>.</p>
