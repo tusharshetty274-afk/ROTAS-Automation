@@ -150,16 +150,11 @@
     }
     </script>
 
-    <!-- Cal.com embed -->
-    <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", {origin:"https://app.cal.com"});
-    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0f1a'/%3E%3Cpath d='M16 6L8 10.5v11L16 26l8-4.5v-11z' fill='none' stroke='%2300d4aa' stroke-width='1.5'/%3E%3Cpath d='M16 6v20M8 10.5L24 21.5M24 10.5L8 21.5' stroke='%2300d4aa' stroke-width='1' opacity='.4'/%3E%3C/svg%3E">
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -1046,8 +1041,35 @@
                 </div>
             </div>
             <div class="cta-form-card">
-                <div id="cal-embed-v2" style="min-width:280px;height:800px;overflow:auto"></div>
-                <script>Cal("inline",{elementOrSelector:"#cal-embed-v2",calLink:"rotasautomation/30min",layout:"month_view"});</script>
+                <div class="form-tabs" style="display:none">
+                    <div class="form-tab active" data-panel="calendly-panel">Book Free Audit</div>
+                    <div class="form-tab" data-panel="form-panel" style="display:none">Free AI Guide</div>
+                </div>
+                <!-- Calendly Panel -->
+                <div id="calendly-panel" class="cta-panel active">
+                    <div id="cal-embed-v2" style="min-width:280px;height:800px;overflow:auto"></div>
+                    <script type="text/javascript">
+                    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    Cal("init", {origin:"https://app.cal.com"});
+                    Cal("inline",{elementOrSelector:"#cal-embed-v2",calLink:"rotasautomation/30min",layout:"month_view"});
+                    </script>
+                </div>
+                <!-- Form Panel -->
+                <div id="form-panel" class="cta-panel" style="display:none;">
+                    <form class="cta-form" action="https://formspree.io/f/xpqonnwj" method="POST">
+                        <div class="row">
+                            <div><label>Name *</label><input type="text" name="name" placeholder="Your name" required></div>
+                            <div><label>Business Name *</label><input type="text" name="business" placeholder="Your company" required></div>
+                        </div>
+                        <div class="field"><label>Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
+                        <div class="row">
+                            <div><label>Country</label><select name="country"><option value="">Select country</option><option>USA</option><option>UK</option><option>Germany</option><option>India</option><option>Australia</option><option>Canada</option><option>South Africa</option><option>Italy</option><option>Other</option></select></div>
+                            <div><label>Industry</label><select name="industry"><option value="">Select industry</option><option>Manufacturing</option><option>Retail</option><option>Healthcare</option><option>Ecommerce</option><option>Real Estate</option><option>Education</option><option>B2B Wholesale</option><option>Hospitality</option><option>Waste Management</option><option>Other</option></select></div>
+                        </div>
+                        <div class="field"><label>Tell us about your biggest workflow headache</label><textarea name="message" placeholder="We spend hours every day on..."></textarea></div>
+                        <button type="submit" class="btn btn-emerald">Get Free AI Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
